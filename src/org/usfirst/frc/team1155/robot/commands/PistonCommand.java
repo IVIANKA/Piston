@@ -1,17 +1,18 @@
 
 package org.usfirst.frc.team1155.robot.commands;
 
-import edu.wpi.first.wpilibj.GenericHID;
+import org.usfirst.frc.team1155.robot.PortMap;
+import org.usfirst.frc.team1155.robot.subsystems.PistonSubsystem;
+
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 import edu.wpi.first.wpilibj.command.Command;
-import org.usfirst.frc.team1155.robot.Robot;
 
 /**
  *
  */
 public class PistonCommand extends Command {
 	
-	public static GenericHID xBoxController = new GenericHID(PortMap.xboxController);
+	public static XboxController xBoxController = new XboxController(PortMap.xboxController);
 	public static JoystickButton raiseButton, lowerButton;
 	private PistonSubsystem use = new PistonSubsystem();
 
@@ -29,11 +30,11 @@ public class PistonCommand extends Command {
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
     	if(raiseButton.get()){
-    		use.activatePiston;
+    		use.activatePiston();
     	} 
     	
     	if(lowerButton.get()){
-    		use.deactivatePiston;
+    		use.deactivatePiston();
     	}
     }
 
