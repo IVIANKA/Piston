@@ -4,6 +4,7 @@ import org.usfirst.frc.team1155.robot.PortMap;
 
 import edu.wpi.first.wpilibj.DoubleSolenoid;
 import edu.wpi.first.wpilibj.command.Subsystem;
+import edu.wpi.first.wpilibj.DoubleSolenoid.Value;
 
 public class PistonSubsystem extends Subsystem {
 
@@ -14,16 +15,16 @@ public class PistonSubsystem extends Subsystem {
 		solenoid2 = new DoubleSolenoid(PortMap.Solenoid2F, PortMap.Solenoid2R);
 	}
 
-	public void activatePiston(){
-		solenoid.set(kForward);
-		solenoid2.set(kForward);
+	public void activatePiston() {
+		solenoid.set(DoubleSolenoid.Value.kForward);
+		solenoid2.set(DoubleSolenoid.Value.kForward);
 	}
-	
-	public void deactivatePiston(){
-		solenoid.set(kReverse);
-		solenoid2.set(kReverse);
+
+	public void deactivatePiston() {
+		solenoid.set(DoubleSolenoid.Value.kReverse);
+		solenoid2.set(DoubleSolenoid.Value.kReverse);
 	}
-	
+
 	@Override
 	protected void initDefaultCommand() {
 		// TODO Auto-generated method stub
