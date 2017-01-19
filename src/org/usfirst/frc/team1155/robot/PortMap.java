@@ -7,6 +7,4 @@ public class PortMap {
 	public static final int Solenoid2R = 4;
 
 	public static final int xboxController = 5;
-	public static final int xboxControllerX = 9;
-	public static final int xboxControllerY = 10;
 }
