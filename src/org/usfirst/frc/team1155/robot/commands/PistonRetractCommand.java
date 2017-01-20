@@ -12,8 +12,6 @@ import edu.wpi.first.wpilibj.command.Command;
  */
 public class PistonRetractCommand extends Command {
 
-	public static XboxController xBoxController = new XboxController(PortMap.xboxController);
-
 	public PistonRetractCommand() {
 		// Use requires() here to declare subsystem dependencies
 		requires(Robot.piston);

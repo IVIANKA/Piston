@@ -12,8 +12,6 @@ import edu.wpi.first.wpilibj.command.Command;
  */
 public class PistonExtendCommand extends Command {
 
-	public static XboxController xBoxController = new XboxController(PortMap.xboxController);
-
 	public PistonExtendCommand() {
 		// Use requires() here to declare subsystem dependencies
 		requires(Robot.piston);
