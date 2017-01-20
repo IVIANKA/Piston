@@ -17,14 +17,19 @@ public class PistonSubsystem extends Subsystem {
 		solenoid2 = new DoubleSolenoid(PortMap.Solenoid2F, PortMap.Solenoid2R);
 	}
 
-	public void activatePiston() {
+	public void extendPiston() {
 		solenoid.set(DoubleSolenoid.Value.kForward);
 		solenoid2.set(DoubleSolenoid.Value.kForward);
 	}
 
-	public void deactivatePiston() {
+	public void retractPiston() {
 		solenoid.set(DoubleSolenoid.Value.kReverse);
 		solenoid2.set(DoubleSolenoid.Value.kReverse);
+	}
+	
+	public void turnOffPiston() {
+		solenoid.set(DoubleSolenoid.Value.kOff);
+		solenoid2.set(DoubleSolenoid.Value.kOff);
 	}
 
 	@Override
