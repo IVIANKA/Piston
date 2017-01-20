@@ -6,6 +6,8 @@ import edu.wpi.first.wpilibj.DoubleSolenoid;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.DoubleSolenoid.Value;
 
+@SuppressWarnings("unused")
+
 public class PistonSubsystem extends Subsystem {
 
 	public DoubleSolenoid solenoid, solenoid2;
