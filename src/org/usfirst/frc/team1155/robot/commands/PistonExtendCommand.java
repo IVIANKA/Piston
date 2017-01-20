@@ -25,10 +25,7 @@ public class PistonExtendCommand extends Command {
 
 	// Called repeatedly when this Command is scheduled to run
 	protected void execute() {
-		if (xBoxController.getXButton()) {
-			Robot.piston.activatePiston();
-		}
-
+		Robot.piston.activatePiston();
 	}
 
 	// Make this return true when this Command no longer needs to run execute()
