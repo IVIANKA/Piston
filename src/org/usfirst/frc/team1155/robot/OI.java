@@ -5,6 +5,7 @@ import org.usfirst.frc.team1155.robot.commands.PistonExtendCommand;
 import org.usfirst.frc.team1155.robot.commands.PistonRetractCommand;
 import org.usfirst.frc.team1155.robot.commands.ServoLeftCommand;
 import org.usfirst.frc.team1155.robot.commands.ServoRightCommand;
+import org.usfirst.frc.team1155.robot.commands.ServoCommand;
 
 import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
@@ -16,6 +17,8 @@ import edu.wpi.first.wpilibj.command.Command;
  */
 
 public class OI extends Command {
+
+	
 	//// CREATING BUTTONS
 	// One type of button is a joystick button which is any button on a
 	//// joystick.
@@ -44,9 +47,34 @@ public class OI extends Command {
 	// until it is finished as determined by it's isFinished method.
 	// button.whenReleased(new ExampleCommand());
 
+	
+	new JoystickButton(leftJoystick,1).whenPressed(new ServoCommand(SERVO_MODE.MODE1));
+	new JoystickButton(leftJoystick,2).whenPressed(new ServoCommand(SERVO_MODE.MODE2));
+
 	public static XboxController gamepad = new XboxController(PortMap.xboxController);
 
 	private JoystickButton pistonExtend, pistonRetract, servoFullRight, servoFullLeft;
+
+	public OI() { // change these buttons later
+		pistonExtend = new JoystickButton(gamepad, PortMap.XBOX_CONTROLLER_X);
+		pistonRetract = new JoystickButton(gamepad, PortMap.XBOX_CONTROLLER_Y);
+	}
+
+	protected void initialize() {
+	}
+
+	protected void execute() {
+		pistonExtend.whenPressed(new PistonExtendCommand());
+		pistonRetract.whenPressed(new PistonRetractCommand());
+		
+	}
+
+	protected boolean isFinished() {
+		return false;
+	}
+
+}
+
 
 	public OI() { // change these buttons later
 		pistonExtend = new JoystickButton(gamepad, PortMap.XBOX_CONTROLLER_X);
