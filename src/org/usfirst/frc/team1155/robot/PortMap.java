@@ -10,7 +10,6 @@ public class PortMap {
 	public static final int XBOX_CONTROLLER_X = 3;
 	public static final int XBOX_CONTROLLER_Y = 4;
 	public static final int Servo = 7;
-	public static final int Servo1 = 6;
 	public static final int XBOX_CONTROLLER_A = 9;
 	public static final int XBOX_CONTROLLER_B = 10;
 	
