@@ -2,6 +2,7 @@
 package org.usfirst.frc.team1155.robot;
 
 import org.usfirst.frc.team1155.robot.subsystems.PistonSubsystem;
+import org.usfirst.frc.team1155.robot.subsystems.ServoSubsystem;
 
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Command;
@@ -20,6 +21,7 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 public class Robot extends IterativeRobot {
 
 	public static final PistonSubsystem piston = new PistonSubsystem();
+	public static final ServoSubsystem servo = new ServoSubsystem();
 	public static OI oi;
 
     Command autonomousCommand;
