@@ -3,6 +3,9 @@ package org.usfirst.frc.team1155.robot;
 import edu.wpi.first.wpilibj.buttons.Button;
 import org.usfirst.frc.team1155.robot.commands.PistonExtendCommand;
 import org.usfirst.frc.team1155.robot.commands.PistonRetractCommand;
+import org.usfirst.frc.team1155.robot.commands.ServoLeftCommand;
+import org.usfirst.frc.team1155.robot.commands.ServoRightCommand;
+
 import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 import edu.wpi.first.wpilibj.command.Command;
@@ -43,11 +46,13 @@ public class OI extends Command {
 
 	public static XboxController gamepad = new XboxController(PortMap.xboxController);
 
-	private JoystickButton pistonExtend, pistonRetract;
+	private JoystickButton pistonExtend, pistonRetract, servoFullRight, servoFullLeft;
 
 	public OI() { // change these buttons later
 		pistonExtend = new JoystickButton(gamepad, PortMap.XBOX_CONTROLLER_X);
 		pistonRetract = new JoystickButton(gamepad, PortMap.XBOX_CONTROLLER_Y);
+		servoFullRight = new JoystickButton(gamepad, PortMap.XBOX_CONTROLLER_B);
+		servoFullLeft = new JoystickButton(gamepad, PortMap.XBOX_CONTROLLER_A);
 	}
 
 	protected void initialize() {
@@ -56,6 +61,8 @@ public class OI extends Command {
 	protected void execute() {
 		pistonExtend.whenPressed(new PistonExtendCommand());
 		pistonRetract.whenPressed(new PistonRetractCommand());
+		servoFullRight.whenPressed(new ServoRightCommand());
+		servoFullLeft.whenPressed(new ServoLeftCommand());
 	}
 
 	protected boolean isFinished() {
