@@ -6,26 +6,19 @@ import org.usfirst.frc.team1155.robot.PortMap;
 
 public class ServoSubsystem extends Subsystem {
 
-	public Servo servo, servo1;
+	public enum SERVO_MODE {
+		MODE1,
+		MODE2
+	}
+	
+	public Servo servo;
 
 	public ServoSubsystem() {
 		servo = new Servo(PortMap.Servo);
-		servo1 = new Servo(PortMap.Servo1);
 	}
 
-	public void fullRightServo (){
-		servo.set(1);
-		servo1.set(1);
-	}
-
-	public void fullLeftServo (){
-		servo.set(0);
-		servo1.set(0);
-	}
-	
-	public void directMiddleServo (){
-		servo.set(0.5);
-		servo1.set(0.5);
+	public void setServo(double position) {
+		servo.set(position);
 	}
 	
 	@Override
